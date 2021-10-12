@@ -1,9 +1,8 @@
-from flask import Flask
-import logging
+from flask import Flask, request
+import logging, json
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    print("0ops:print")
-    logging.error("0ops:logging.error")
+    logging.error(json.dumps(request))
     return "Hello, World!"
